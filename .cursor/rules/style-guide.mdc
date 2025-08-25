@@ -1,0 +1,908 @@
+---
+description: Style guide
+globs:
+alwaysApply: true
+---
+
+# Purpose and goal
+
+This style guide helps you find a way among a variety of options for use of language, grammar, and vocabulary in the Axiom documentation. The purpose of this style guide is to achieve consistency in our written communication. This is important because we can only earn the trust, confidence, and loyalty of developers if we’re consistent and reliable.
+
+# Voice and tone
+
+- Accessibility is our primary goal. We aim for simplicity, conciseness, and speed. Every character counts in optimising users’ time to value. Our texts are inspired by the [Simplified Technical English specification](https://www.asd-ste100.org/).
+- As a secondary goal, technical documents can be appealing, captivating, and even playful. These qualities are nice to have, but they shouldn’t compromise the primary goal.
+
+# Scope of documentation
+
+We at Axiom document Axiom. As a general rule, we don’t document what users need to do with other companies’ products. The reason is that third-party tools can change anytime, and we cannot reliably keep track of these changes and remain in control of the docs. We cannot commit to maintaining information about a product we have no control over. If necessary, link to the documentation and resources of other companies (but never to our competitors’ sites).
+
+To decide whether to make an exception and document what users need to do with another company’s product, use the following decision tree from the book [The Product is Docs](https://www.amazon.com/Product-Docs-technical-documentation-development-ebook/dp/B085KHTV95) by the Splunk documentation team, and ask for Mano’s approval.
+
+If you make an exception and document another company’s product, include the following disclaimer (replacing Company and Feature):
+
+> Any changes to Company's Feature can make the example above outdated. If this happens, please refer to the official Company documentation on Feature, and we kindly ask you to inform us of the issue using the feedback tool at the bottom of this page.
+> 
+
+Any deviations from this process need to be personally approved by Dominic or Neil.
+
+# Assumed background knowledge
+
+Assume that users reading about more advanced topics have already completed the getting started guide or at least have equivalent knowledge about our product.
+
+# Structure of documentation articles
+
+A typical use-case-based documentation article looks like the following:
+
+1. Concept
+    - The goals the user wants to achieve.
+    - Some terms the user needs to know. (Optional)
+    - Links to the individual section headings, which explain how to achieve each goal.
+2. Prerequisites (Optional)
+    - The steps the user needs to do before following a guide.
+3. Procedures
+    - Each section contains the procedure and code snippet to achieve one specific goal.
+    - Each section is self-contained. This means that the user can follow the procedure and achieve their goal without reading anything else in the guides (apart from the getting started guide, which is assumed to be a prerequisite for all procedures).
+    - The steps the user needs to take and why they need to take them.
+    - A code example to achieve the goal. (Optional)
+    - Explanation of what this code does for the user.
+4. Limitations (Optional)
+    - Things we know are missing/broken in our solution.
+5. Reference (Optional)
+    - Additional options and tweaks related to the queries and methods used in the guide.
+    - Links to the API reference.
+6. What’s Next
+    - Other pages the user can check out to continue solving their problem.
+
+---
+
+# Use of language
+
+## Imperative
+
+Use the imperative form to express an action that the user is required to take to achieve their goal. This is the form we generally use when we talk about a procedure.
+
+The imperative form has several advantages:
+
+- It’s the clearest and simplest way of talking about user actions.
+- It keeps the tone active and focused on the user.
+
+When you write an imperative sentence in which you specify both the action and the user’s goal with the action, specify the goal first and the action second if the action involves risk.
+
+<aside>
+👍 **Good:** To delete the document, click **Delete**.
+
+**Bad:** Click **Delete** to delete the document.
+**Bad:** Click **Delete** if you want to delete the document.
+
+</aside>
+
+If the action is not risky, specify the action first and the goal second.
+
+<aside>
+👍
+
+**Good:** Click **Run** to run a query.
+
+**Bad:** To run a query, click **Run**.
+
+</aside>
+
+Avoid conditional sentence structure to express the goal. For more information on conditionality tone, see Conditionality.
+
+<aside>
+👍 **Good:** To delete the document, click **Delete**.
+
+**Bad:** If you want to delete the document, click **Delete**.
+
+</aside>
+
+Don’t use the word *please*. For more information on politeness, see Politeness.
+
+<aside>
+👍 **Good:** Check if you have write permission in the folder.
+
+**Bad:** Please check if you have write permission in the folder.
+
+</aside>
+
+## Modality
+
+This section explains how to use language to express possible situations.
+
+<aside>
+❗ As a general rule, avoid modal verbs.
+
+Avoid the verbs *must* and *need*. See Required Action below.
+
+Avoid the verb *should*. See Recommended Action below.
+
+Avoid the verbs *can* and *want*. See Optional Action and Conditionality below.
+
+Avoid the verbs *may* and *might*. See Uncertainty below.
+
+</aside>
+
+### Required action
+
+Avoid the words *must* and *need* to express required action. Express what you want to say with the imperative form which already implies that the action is required.
+
+<aside>
+👍 **Good:** Name the new file.
+
+**Bad:** You must specify a name for the new file.
+
+**Bad:** You need to specify a name for the new file.
+
+</aside>
+
+Avoid the expressions *must not* and *may not* to express prohibited action.
+
+<aside>
+👍 **Good:** Don’t change the configuration file.
+
+**Bad:** You may not change the configuration file.
+
+</aside>
+
+### Recommended action
+
+Avoid the word *should* to express recommended action. Express what you want to say without it.
+
+<aside>
+👍 **Good:** Recommended: Make a backup of your data before you proceed.
+
+**Bad:** You should make a backup of your data before you proceed.
+
+**Bad:** It is a good idea to make a backup of your data before you proceed.
+
+</aside>
+
+### Optional action
+
+Avoid conditional sentence structure and the words *can*, *may* and *want* to express optional action. Express what you want to say in other ways.
+
+<aside>
+👍 **Good:** Optional: Specify the maximum width of the component.
+
+**Bad:** You can specify the maximum width of the component.
+
+**Bad:** You may specify the maximum width of the component.
+
+**Bad:** If you want to specify the maximum width of the component, use the **max-width** attribute.
+
+**Very bad:** If you want to, you can specify the maximum width of the component.
+
+</aside>
+
+<aside>
+👍 **Good:** This guide explains how to send data to Axiom.
+
+**Bad:** You can send data to Axiom. To do so, follow this guide.
+
+</aside>
+
+### Conditionality
+
+Avoid conditional sentence structure to express conditionality. Express what you want to say without it.
+
+Write the conditional clause before the main clause.
+
+<aside>
+👍 **Good:** To send data to Axiom, follow these steps:
+
+**Bad:** If you want to send data to Axiom, follow the steps below:
+
+</aside>
+
+<aside>
+👍 **Good:** Specify the file format in which Axiom exports the data.
+
+**Bad:** Specify the output file format. If you do so, Axiom will export the data to the output file format.
+
+</aside>
+
+<aside>
+👍 **Good:** 1. Click **Save**. 2. In the dialog that appears, click **Confirm**.
+
+**Bad:** 1. Click the **Save** button. 2. If you click the **Save** button, a dialog will appear. Click **Confirm**.
+
+</aside>
+
+Conditional sentence structure has its use as well. To express expected behavior in response to some user action, use the [first conditional](https://learnenglish.britishcouncil.org/grammar/intermediate-to-upper-intermediate/conditionals-1). Write the conditional clause before the main clause.
+
+<aside>
+👍 **Good:** If you leave this field empty, Axiom will use the default name.
+
+**Good:** If you import data to a table that already contains information, the existing data in the table will be overwritten.
+
+**Better:** Any data previously stored in the table will be overwritten.
+
+</aside>
+
+To express an imperative with a condition, don’t use *will*. Write the conditional clause before the main clause.
+
+<aside>
+👍 **Good:** If the application hangs for a long period of time, reload the page.
+
+**Bad:** If the application hangs for a long period of time, you will need to reload the page.
+
+</aside>
+
+Sometimes it feels unnatural to use the first conditional and put the conditional clause before the main clause. For instance, if you express a necessary condition, feel free to deviate from the guidance above.
+
+<aside>
+👍 **Good:** This option only has an effect if you also enable the **Keep original file name** option.
+
+**Bad:** Only if you also enable the option **Keep original file name** does this option have an effect.
+
+**Bad:** Unless you enable the option **Keep original file name**, this option does not have an effect.
+
+</aside>
+
+### Uncertainty
+
+Avoid the words *may* and *might* to express uncertainty. Express what you want to say without them.
+
+<aside>
+👍 **Good:** Check if you need to update your operating system.
+
+**Bad:** You might need to update your operating system.
+
+</aside>
+
+<aside>
+👍 **Good:** Make sure that your customizations work as usual after the upgrade.
+
+**Bad:** Your customizations might not work as usual after the upgrade.
+
+</aside>
+
+## Jargon and idioms
+
+Write simply and clearly. Don’t use technical jargon, and keep abbreviations to a minimum.
+
+<aside>
+👍 **Good:** Increase load on the CPU until its temperature rises so high that its internal protection mechanism (known as thermal throttling) limits CPU performance.
+
+**Bad:** Ramp up the CPU until thermal throttling kicks in.
+
+</aside>
+
+Explain everything that’s necessary for customers to use our product and that isn’t general IT knowledge. Don’t explain Axiom-specific terms; they’re defined elsewhere in the documentation in the Glossary.
+
+<aside>
+👍 **Good:** Click **Next**.
+
+**Bad:** Move your mouse and point with the cursor to the **Next** button on the screen. Place your index finger on the left button on your mouse and press the button down.
+
+</aside>
+
+Avoid idioms. Aim to use more precise and less ambiguous terms.
+
+<aside>
+👍 **Good:** Delete any empty files and folders.
+
+**Bad:** Deal with any empty files and folders.
+
+</aside>
+
+---
+
+# Grammar and formatting
+
+As a general rule, follow the [Google style guide](https://developers.google.com/style) in the documentation and the app. This section gives examples of the stylistic choices and indicates clearly where we deviate from the recommendations of the Google style guide.
+
+## Capitalization
+
+The following custom capitalization rules are inspired by the [Google style guide](https://developers.google.com/style/capitalization) for the documentation pages and the [Mailchip style guide](https://styleguide.mailchimp.com/web-elements/) for in-app text.
+
+Use [Capitalize My Title](https://capitalizemytitle.com/style/Chicago/) with the Chicago style to determine the correct capitalization.
+
+<aside>
+📌 Use sentence case for everything.
+
+</aside>
+
+### Navigation items
+
+Use sentence case for navigation items.
+
+<aside>
+👍 **Good:** Send data
+
+**Bad:** Send Data
+
+</aside>
+
+### Page titles and headings
+
+Use sentence case for page titles and headings.
+
+<aside>
+👍 **Good:** Send event data to Axiom for analysis
+
+**Bad:** Send Event Data to Axiom for Analysis
+
+</aside>
+
+### Buttons
+
+Use sentence case for button labels. Write each button label so that it clearly expresses an action. Omit articles.
+
+<aside>
+👍 **Good:** Sign up
+
+**Bad:** Sign Up
+
+**Bad:** Submit the Request
+
+**Good:** Submit request
+
+**Better:** Submit
+
+</aside>
+
+### Checkboxes
+
+Use sentence case for checkboxes.
+
+<aside>
+👍 **Good:**
+
+Guest permissions:
+
+- [ ]  Modify event
+- [ ]  Invite others
+- [ ]  See guest list
+
+**Bad:**
+
+Guest permissions
+
+- [ ]  modify event
+- [ ]  invite others
+- [ ]  see guest list
+</aside>
+
+### Drop-down menus
+
+Use sentence case for menu names and menu items.
+
+<aside>
+👍 **Good:**
+
+Repetition settings:
+
+- Does not repeat
+- Daily
+- Weekly
+
+**Bad:**
+
+Repetition Settings:
+
+- does not repeat
+- daily
+- weekly
+</aside>
+
+### Forms
+
+Use sentence case for form titles and form fields.
+
+<aside>
+👍 **Good:**
+
+Configure document conversion
+
+- Encoding
+- Input file type
+- Output file type
+</aside>
+
+### Links
+
+For more information, see [Hyperlinks](https://www.notion.so/Documentation-style-guide-84aad9ee659945ddba4b05a29d0b27e7?pvs=21).
+
+### Lists
+
+For more information, see [Lists](https://www.notion.so/Documentation-style-guide-84aad9ee659945ddba4b05a29d0b27e7?pvs=21).
+
+### Radio buttons
+
+Use sentence case for radio button headings and button fields.
+
+<aside>
+👍 **Good:**
+
+Overwrite options
+
+- Overwrite existing table
+- Update existing table
+</aside>
+
+### Tooltips
+
+Use sentence case for tooltips, even if they look more like hidden button labels for icons rather than help text.
+
+Tooltips that are hidden button labels for icons:
+
+<aside>
+👍 **Good:** Save file
+
+**Bad:** Save File
+
+</aside>
+
+Tooltips that are hidden help text:
+
+<aside>
+👍 **Good:** Inverting colors in the image decreases image quality.
+
+</aside>
+
+### Tables
+
+Use sentence case in the headings of tables.
+
+### Colons
+
+Immediately after a colon, start the text with an uppercase letter.
+
+<aside>
+👍 **Good:** You and Axiom: The perfect pair
+
+**Bad:** You and Axiom: the perfect pair
+
+</aside>
+
+### Brands, products, job titles
+
+Contrary to the Google style guide, avoid superfluous capitals (”scare caps”) and punctuation marks in brand names, product names, and job titles. Do not uncritically accept the official names that aim to draw attention to them on the page.
+
+<aside>
+👍 **Good:** Ebay, Etrade, Yahoo
+
+**Bad:** eBay, E*TRADE, Yahoo!
+
+</aside>
+
+<aside>
+👍 **Good:** chief executive officer
+
+**Bad:** Chief Executive Officer
+
+</aside>
+
+Exception: iPhone
+
+## Numbers and units
+
+[Numbers in Google style guide](https://developers.google.com/style/numbers)
+
+### Units of measurement
+
+Following the [Google style guide](https://developers.google.com/style/units-of-measure), use a nonbreaking space between the number and the unit.
+
+<aside>
+👍 **Good:** 215 GB
+
+**Bad:** 215GB
+
+</aside>
+
+### Abbreviations for billion, million, thousand
+
+If necessary for saving space, use the following abbreviations:
+
+- `B` for billion
+- `M` for million
+- `K` for thousand
+
+Following the [Google style guide](https://developers.google.com/style/units-of-measure#use-k-to-indicate-thousands), don’t put a space between the number and the abbreviation.
+
+<aside>
+👍 **Good:** 215B
+
+**Bad:** 215 B
+
+</aside>
+
+## Contractions
+
+[Contractions in Google style guide](https://developers.google.com/style/contractions)
+
+## Gender
+
+[Gender and sexuality in Mailchimp style guide](https://styleguide.mailchimp.com/writing-about-people/#header-3-gender-and-sexuality)
+
+Use “they” as a singular pronoun instead of his or her.
+
+**Good:** A user enters their login credentials.
+
+**Bad:** A user enters his or her login credentials.
+
+## Abbreviations
+
+[Abbreviations in Google style guide](https://developers.google.com/style/abbreviations)
+
+When an abbreviation first occurs on a page, spell it out in full and write the abbreviation in parentheses. On the rest of the page, use the abbreviation only.
+
+You’ll likely overestimate the assumed knowledge of your audience. Spell out even the abbreviations you consider commonplace, such as UI or CI.
+
+<aside>
+👍 **Good:** Find the binary large object (blob) and use it in the database. The blob has the following format:
+
+**Bad:** Find the blob and use it in the database. The blob has the following format:
+
+</aside>
+
+### Abbreviations for Latin phrases
+
+Don’t use abbreviations for Latin phrases.
+
+- Use *for example* instead of *e.g.*
+- Don’t use *i.e.*
+
+Exception: The use of *etc.* is acceptable.
+
+## Links and cross-references
+
+[Links in Google style guide](https://developers.google.com/style/link-text)
+
+### Cross-references
+
+Use cross-references to refer to internal content whose title you want to mention.
+
+To refer to another topic on the website, or to refer to a section within the same topic, use a cross-reference with wording shown below.
+
+<aside>
+👍 **Good:** For more information, see [Send OpenTelemetry data to Axiom](https://axiom.co/docs).
+
+**Good:** For more information on OpenTelemetry, see [Send OpenTelemetry data to Axiom](https://axiom.co/docs).
+
+</aside>
+
+### Hyperlinks
+
+The hyperlink doesn’t include articles that precede the linked text or punctuation marks that come after.
+
+<aside>
+👍 **Good:** For more information, see the [Google documentation](https://axiom.co/docs).
+
+**Bad:** For more information, see [the Google documentation.](https://axiom.co/docs)
+
+</aside>
+
+The hyperlink includes the description of the code element.
+
+<aside>
+👍 **Good:** To configure the width of the element, use the [`width`](https://axiom.co/docs) property.
+
+**Bad:** To configure the width of the element, use the [`width` property](https://axiom.co/docs).
+
+</aside>
+
+Don’t use expressions like “Click here!” or “Click for more information” or “Read this” as links. Write a full sentence and link relevant keywords.
+
+<aside>
+👍 **Good:** For more information, see the [Google documentation](https://axiom.co/docs).
+
+**Bad:** Read the [Google documentation](https://axiom.co/docs) for details.
+
+**Bad:** Read [this](https://axiom.co/docs).
+
+**Bad:** For more information, click [here](https://axiom.co/docs).
+
+</aside>
+
+### External links
+
+**Contrary** to the Google style guide, make external links open in a new tab/window. For more information on when to use external links, see Scope above.
+
+To refer to an external website, use a hyperlink with the following wording:
+
+<aside>
+👍 **Good:** For more information, see the [Google documentation](https://axiom.co/docs).
+
+**Good:** For more information on search filters, see the [Google documentation](https://axiom.co/docs).
+
+</aside>
+
+### Internal links
+
+To refer to another topic in the same documentation project or section within the same document without mentioning the title of the topic or the section, use a hyperlink. Follow the same rules of punctuation and capitalization as normal text.
+
+1. [Send data to Axiom](https://axiom.co/docs).
+2. [Analyze the data](https://axiom.co/docs).
+3. [Monitor the data](https://axiom.co/docs).
+
+## Lists and tables
+
+Use lists and tables to organize content so that users can find and understand information more quickly and easily. To determine when to use a list, a definition list or a table, see the section [List or table?](https://developers.google.com/style/tables#list-or-table) in the Google style guide.
+
+### Lists
+
+[Lists in Google style guide](https://developers.google.com/style/lists)
+
+If you have a list of two or more items, putting them in a list is usually recommended. This might seem excessive, because in non-technical documents, we’re used to writing two or three items in a sentence instead of a list. In technical documents, lists appear more often because they allow users to easily scan the content of the document and to follow the process described.
+
+Introduce lists with text that can stand alone as a complete sentence.
+
+<aside>
+👍 **Good:** To send data to Axiom, follow these steps:
+
+**Bad:** To send data to Axiom:
+
+</aside>
+
+<aside>
+👍 **Good:** The fields are defined as follows:
+
+**Bad:** The fields are:
+
+</aside>
+
+Use a colon to introduce a list.
+
+<aside>
+👍 **Good:** To send data to Axiom, follow these steps:
+
+**Bad:** To send data to Axiom, follow these steps.
+
+</aside>
+
+We use two different types of lists depending on the context:
+
+- Numbered lists
+- Bulleted lists
+
+**Contrary** to the Google style guide, don’t use lettered lists. To describe a set of mutually exclusive options, use a bulleted list.
+
+### Numbered lists
+
+Use a numbered list to describe a procedure that the user needs to follow in a given order. In each step, explain exactly one user action in the imperative form.
+
+<aside>
+👍 **Good:**
+
+1. Open the box.
+2. Remove the bobcat from the box.
+3. Feed the bobcat.
+
+**Bad:** After opening the box and removing the bobcat from the box, you can proceed to feed the bobcat.
+
+</aside>
+
+### Bulleted lists
+
+Use a bulleted list to describe a set of items that don’t constitute a sequence. Indicate clearly in the introductory sentence whether the list is exhaustive and whether the items are mutually exclusive options.
+
+<aside>
+👍 **Good:**
+
+Use the **Settings** tab to achieve the following goals, among others:
+
+- Set your profile picture.
+- Change your password.
+- Enable two-factor authentication.
+</aside>
+
+<aside>
+👍 **Good:**
+
+Choose one of the following options:
+
+- Store the data in a CSV file.
+- Upload the data to the cloud.
+</aside>
+
+### Tables
+
+[Tables in Google style guide](https://developers.google.com/style/tables)
+
+To explain a list of items where each item consists of three or more pieces of information, use a table.
+
+In column headings, use sentence case and omit articles.
+
+### Spelling
+
+Use standard American spelling. When in doubt about the spelling of a word, see the [Merriam-Webster Dictionary](https://www.merriam-webster.com/).
+
+<aside>
+👍 **Good:** To choose a custom background color, buy a premium license.
+
+**Bad:** To choose a custom background colour, buy a premium licence.
+
+</aside>
+
+### Dates
+
+Use the date format 1 December 2021.
+
+### Compound words
+
+If a compound word has a widely accepted one-word form, use the one-word version.
+
+<aside>
+👍 **Good:** email (noun and verb), online, website, webpage, ebook
+
+**Bad:** e-mail, on-line, web site, web page, e-book
+
+Use *setup* and *login* as nouns, and *set up* and *log in* as phrasal verbs.
+
+**Good:** This page explains how to set up flows.
+
+**Good:** Download the setup file.
+
+**Good:** Log in to the portal.
+
+**Good:** Enter your login credentials.
+
+**Bad:** This page explains how to setup flows.
+
+</aside>
+
+### Punctuation
+
+[Punctuation in Google style guide](https://developers.google.com/style/colons)
+
+### Commas
+
+[Commas in Google style guide](https://developers.google.com/style/commas)
+
+Use the serial (Oxford) comma. In a series of three or more items, use a comma before the final *and* or *or*.
+
+<aside>
+👍 **Good:** Check for any error messages in the log before, during, and after the upgrade.
+
+**Bad:** Check for any error messages in the log before, during and after the upgrade.
+
+</aside>
+
+In general, use a comma after an introductory word or phrase.
+
+<aside>
+👍 **Good:** Based on this information, Axiom calculates the width.
+
+**Bad:** Based on this information Axiom calculates the width.
+
+</aside>
+
+Use a comma in conditional sentences if the conditional clause precedes the main clause.
+
+<aside>
+👍 **Good:** If you leave this field empty, Axiom uses the default name.
+
+**Bad:** If you leave this field empty Axiom uses the default name.
+
+</aside>
+
+### Hyphens
+
+[Hyphens in Google style guide](https://developers.google.com/style/hyphens)
+
+Hyphenate words only if necessary for clarity.
+
+Don’t hyphenate a word if it has a widely accepted non-hyphenated version. For more information, see [Compound words](https://www.notion.so/ea492605620c4d4691ae98eebde82604?pvs=21).
+
+<aside>
+👍 **Good:** Contact us by email.
+
+**Good:** Feel free to email us.
+
+**Bad:** Send us an e-mail.
+
+</aside>
+
+Don’t hyphenate a word that has a prefix or suffix except in the situations described in the [Google style guide](https://developers.google.com/style/hyphens#when-to-hyphenate).
+
+## Relative pronouns
+
+Don’t omit the relative pronouns such as *that* and *which*. The [Google style guide](https://developers.google.com/style/translation#clear-language) says using relative pronouns makes things clearer, and it’s recommended when writing for a global audience.
+
+## Vocabulary
+
+### Politeness
+
+In everyday conversation, it’s important to be polite. In technical writing, however, precision, clarity, and efficiency are crucial. If polite expressions make the text vaguer, more ambiguous, or longer, remove them.
+
+The imperative is the most basic and practical way of giving instructions, and it isn’t impolite in technical writing. For more information, see section [Imperative](https://www.notion.so/ea492605620c4d4691ae98eebde82604?pvs=21).
+
+Don’t use the word *please*.
+
+<aside>
+👍 **Good:** Check if you have write permission in the folder.
+
+**Bad:** Please check if you have write permission in the folder.
+
+</aside>
+
+### Use of *we*
+
+Don’t use the first person plural. Say “Axiom” instead.
+
+Don’t use the first person plural to refer to actions that the user needs to do. Instead, use the imperative and “you” as explained in [Imperative](https://www.notion.so/ea492605620c4d4691ae98eebde82604?pvs=21).
+
+<aside>
+👍 **Bad:** We recommend backing up your data before the upgrade.
+
+**Good:** Axiom recommends backing up your data before the upgrade.
+
+**Better:** Recommended: Back up your data before the upgrade.
+
+</aside>
+
+### The word *data*
+
+Use the word *data* as if it was a singular noun. The word *data* used to be only plural in English, but nowadays, the use of the singular is also accepted. For the sake of simplicity, use the singular.
+
+<aside>
+👍 **Good:** Your data is in safe hands.
+
+**Bad:** Your data are in safe hands.
+
+</aside>
+
+### Use of *for instance*
+
+Use *for example* instead of *for instance*.
+
+### Use of ampersand (*&*)
+
+Use *and* instead of ampersand (*&*) whenever possible. Use ampersand (*&*) only in proper names like Dolce & Gabbana.
+
+### Use of ellipsis (…)
+
+[Apple style guide](https://developer.apple.com/design/human-interface-guidelines/menus)
+
+In menu items, use ellipsis (…) for destroy actions. “The ellipsis character (…) signals that people need to input information or make additional choices, typically within another view.”
+
+## Conventions for code snippets
+
+[Code examples in Microsoft style guide](https://learn.microsoft.com/en-us/style-guide/developer-content/code-examples)
+
+- In our docs, we mostly use the following code examples:
+    - “Simple, one-line examples interspersed with text.”
+    - “Short, self-contained examples that illustrate specific points.”
+    
+    These code examples only contain the few queries and methods required to achieve the basic use case.
+    
+- Add comments above the lines of code that are specific to the goal you want to achieve in the code snippet.
+
+## Graphical elements
+
+### Screenshots
+
+Screenshots are important for new and prospective users. Use many of them in introductory material such as the getting started guides.
+
+In the other parts of the documentation, exercise caution when adding new screenshots. You can assume that users reading about more advanced topics have already completed the getting started guide (or at least have equivalent knowledge about our product), and that they’re familiar with the main screens of our application.
+
+Additionally, the UI of our product changes often, and keeping screenshots up to date is a huge maintenance effort. It also introduces a lot of room for error because when the UI changes, you can never be sure that you change every screenshot affected by this change. Unlike broken external links, outdated screenshots cannot be quickly and easily detected.
+
+Apart from the getting started guides, aim to use few screenshots to illustrate a procedure where you tell users to navigate within our application. If you’re thinking about including a screenshot because users might find it difficult to navigate the UI, the problem is probably with the UI. If this is the case, consult with Design and the developers about how the UI could be more intuitive.
+
+Don’t use a screenshot if it contains code or other text that users might want to copy.
+
+### Diagrams
+
+Use diagrams to express abstract technology graphically. What you see in your mind is usually not obvious to others. Both textual and graphical descriptions can help your audience understand you.
+
+If you can illustrate a process with a flowchart or UML diagram, consider the following:
+
+- Draw arrows only in one direction unless it’s necessary to add a second direction.
+- Use simple descriptions in your elements.
+- Comment what is hard to describe.
+- Follow the [Lucidchart UML course](https://www.lucidchart.com/pages/uml-class-diagram).
+
+When creating diagrams, ask for the Design team’s input.
+
+# Placeholders
+
+We distinguish between placeholders for path parameters in API endpoints and other placeholders:
+
+- **Placeholders for path parameters in API endpoints:** Write them in lower case, use `_` as separators, and enclose them with `{}`. For example, `v1/datasets/{dataset_name}` .
+- **Other placeholders:** Write them in upper case, use `_` as separators, without enclosing them with other characters. For example, `DATASET_NAME` .
+
+We need to make a difference between placeholders, which always represent a string, and declared variable names and environment variable names. For example, in `AXIOM_API_TOKEN = "<YOUR_API_TOKEN>"`, `AXIOM_API_TOKEN` is a declared variable name. However, in`Authorization "Bearer <AXIOM_API_TOKEN>”`, `<AXIOM_API_TOKEN>` represents a placeholder.
