@@ -4,3 +4,5 @@
 /node_modules
 
 .DS_Store
+
+/.cursor/rules/style-guide.mdc
